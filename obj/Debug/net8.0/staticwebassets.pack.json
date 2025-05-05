@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\6cc82ce6-f6b3-4295-85b9-353dcecbfe14.jpg",
+      "PackagePath": "staticwebassets\\uploads\\6cc82ce6-f6b3-4295-85b9-353dcecbfe14.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\dcbe3b1b-c8fa-4e9a-a167-27e5632c5c2f.jpg",
+      "PackagePath": "staticwebassets\\uploads\\dcbe3b1b-c8fa-4e9a-a167-27e5632c5c2f.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Bookstore-backend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Bookstore-backend.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Bookstore-backend.props",
+      "PackagePath": "build\\Bookstore-backend.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Bookstore-backend.props",
+      "PackagePath": "buildMultiTargeting\\Bookstore-backend.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Bookstore-backend.props",
+      "PackagePath": "buildTransitive\\Bookstore-backend.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

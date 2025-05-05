@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Try_application.Database.Entities;
 
@@ -12,6 +10,7 @@ namespace Try_application.Database
         {
         }
 
-        public IEnumerable<object> Books { get; internal set; }
+        public DbSet<Product> Products { get; set; }  // ✅ Entity for Product table
+        public DbSet<Book> Books { get; set; } = null!;
     }
 }

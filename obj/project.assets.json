@@ -3900,9 +3900,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\Try application.csproj",
-      "projectName": "Try application",
-      "projectPath": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\Try application.csproj",
+      "projectUniqueName": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\Bookstore-backend.csproj",
+      "projectName": "Bookstore-backend",
+      "projectPath": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\Bookstore-backend.csproj",
       "packagesPath": "C:\\Users\\SRISTI SHRETHA\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\obj\\",
       "projectStyle": "PackageReference",

@@ -1,12 +1,228 @@
 {
   "Version": 1,
-  "Hash": "z/aqQ6mjif9GX9cyrfaI4GVgFyXkoLiDd5TCYDTAFq0=",
-  "Source": "Try application",
-  "BasePath": "_content/Try application",
+  "Hash": "oe5wXYRhk02fPrWzc4VOnKJlQg5OmT1OvJIwnJ36Jsk=",
+  "Source": "Bookstore-backend",
+  "BasePath": "_content/Bookstore-backend",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "Bookstore-backend\\wwwroot",
+      "Source": "Bookstore-backend",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\6cc82ce6-f6b3-4295-85b9-353dcecbfe14.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/6cc82ce6-f6b3-4295-85b9-353dcecbfe14#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "brm9rbrsuo",
+      "Integrity": "iW3ctPGDuC/ZQcjHAXii8e0HJ3g6pHhOYagv52x+00E=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\6cc82ce6-f6b3-4295-85b9-353dcecbfe14.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\dcbe3b1b-c8fa-4e9a-a167-27e5632c5c2f.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/dcbe3b1b-c8fa-4e9a-a167-27e5632c5c2f#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "x6ez1thoep",
+      "Integrity": "Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\dcbe3b1b-c8fa-4e9a-a167-27e5632c5c2f.jpg"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "uploads/6cc82ce6-f6b3-4295-85b9-353dcecbfe14.brm9rbrsuo.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\6cc82ce6-f6b3-4295-85b9-353dcecbfe14.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6056936"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iW3ctPGDuC/ZQcjHAXii8e0HJ3g6pHhOYagv52x+00E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 04:42:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "brm9rbrsuo"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/6cc82ce6-f6b3-4295-85b9-353dcecbfe14.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-iW3ctPGDuC/ZQcjHAXii8e0HJ3g6pHhOYagv52x+00E="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/6cc82ce6-f6b3-4295-85b9-353dcecbfe14.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\6cc82ce6-f6b3-4295-85b9-353dcecbfe14.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6056936"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iW3ctPGDuC/ZQcjHAXii8e0HJ3g6pHhOYagv52x+00E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 04:42:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-iW3ctPGDuC/ZQcjHAXii8e0HJ3g6pHhOYagv52x+00E="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/dcbe3b1b-c8fa-4e9a-a167-27e5632c5c2f.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\dcbe3b1b-c8fa-4e9a-a167-27e5632c5c2f.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5151526"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 04:45:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/dcbe3b1b-c8fa-4e9a-a167-27e5632c5c2f.x6ez1thoep.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\dcbe3b1b-c8fa-4e9a-a167-27e5632c5c2f.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5151526"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 04:45:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x6ez1thoep"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/dcbe3b1b-c8fa-4e9a-a167-27e5632c5c2f.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8="
+        }
+      ]
+    }
+  ]
 }
