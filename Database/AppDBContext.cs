@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 using Try_application.Database.Entities;
 
 namespace Try_application.Database
@@ -11,6 +12,6 @@ namespace Try_application.Database
         }
 
         public DbSet<Product> Products { get; set; }  // ✅ Entity for Product table
-        public DbSet<Book> Books { get; set; } = null!;
+        public DbSet<Banner> Banners { get; set; }
     }
 }

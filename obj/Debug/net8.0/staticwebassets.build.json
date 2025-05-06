@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oe5wXYRhk02fPrWzc4VOnKJlQg5OmT1OvJIwnJ36Jsk=",
+  "Hash": "ueoA9W2M2rzpmSnng7l85nENWnjFZIK+516Yi9eNwqY=",
   "Source": "Bookstore-backend",
   "BasePath": "_content/Bookstore-backend",
   "Mode": "Default",
@@ -16,6 +16,237 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\046e066c-4e51-434a-a34a-ed8d09847f67.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/046e066c-4e51-434a-a34a-ed8d09847f67#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ejd8893tvv",
+      "Integrity": "ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\046e066c-4e51-434a-a34a-ed8d09847f67.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\069903f5-9be5-4067-b9ee-01be82ba65d8.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/069903f5-9be5-4067-b9ee-01be82ba65d8#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ejd8893tvv",
+      "Integrity": "ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\069903f5-9be5-4067-b9ee-01be82ba65d8.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\18dd2569-bc2c-48e9-a738-cad59ad3cf3b.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/18dd2569-bc2c-48e9-a738-cad59ad3cf3b#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "s66xte3hpb",
+      "Integrity": "lEIY+08wnvNk8hSeXw3GMXuLqog6b7MxPXW+B2hIC3c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\18dd2569-bc2c-48e9-a738-cad59ad3cf3b.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\1b2e2fa1-968e-47d3-ad14-b6bce53eb7ff.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/1b2e2fa1-968e-47d3-ad14-b6bce53eb7ff#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "x6ez1thoep",
+      "Integrity": "Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\1b2e2fa1-968e-47d3-ad14-b6bce53eb7ff.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\23f6c294-0527-45c5-abdb-0f3d8b979015.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/23f6c294-0527-45c5-abdb-0f3d8b979015#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "x6ez1thoep",
+      "Integrity": "Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\23f6c294-0527-45c5-abdb-0f3d8b979015.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\35ff9ab8-341e-427a-9bd1-b0ce9f2f9b38.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/35ff9ab8-341e-427a-9bd1-b0ce9f2f9b38#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "x6ez1thoep",
+      "Integrity": "Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\35ff9ab8-341e-427a-9bd1-b0ce9f2f9b38.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\4c891ccd-0fff-4f25-9b05-72466970d922.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/4c891ccd-0fff-4f25-9b05-72466970d922#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ejd8893tvv",
+      "Integrity": "ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\4c891ccd-0fff-4f25-9b05-72466970d922.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\526ae94b-899f-4b19-9eeb-72f1d9249864.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/526ae94b-899f-4b19-9eeb-72f1d9249864#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ejd8893tvv",
+      "Integrity": "ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\526ae94b-899f-4b19-9eeb-72f1d9249864.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\567e7f11-614b-4b9d-8ad9-86dc2a5ee2bf.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/567e7f11-614b-4b9d-8ad9-86dc2a5ee2bf#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "s66xte3hpb",
+      "Integrity": "lEIY+08wnvNk8hSeXw3GMXuLqog6b7MxPXW+B2hIC3c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\567e7f11-614b-4b9d-8ad9-86dc2a5ee2bf.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\600695cc-6b60-432a-bf46-507f05ef9e7b.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/600695cc-6b60-432a-bf46-507f05ef9e7b#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "s66xte3hpb",
+      "Integrity": "lEIY+08wnvNk8hSeXw3GMXuLqog6b7MxPXW+B2hIC3c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\600695cc-6b60-432a-bf46-507f05ef9e7b.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\645eca66-8583-410b-8876-cfaff02a27ff.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/645eca66-8583-410b-8876-cfaff02a27ff#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ejd8893tvv",
+      "Integrity": "ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\645eca66-8583-410b-8876-cfaff02a27ff.jpg"
+    },
     {
       "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\6cc82ce6-f6b3-4295-85b9-353dcecbfe14.jpg",
       "SourceId": "Bookstore-backend",
@@ -38,6 +269,111 @@
       "OriginalItemSpec": "wwwroot\\uploads\\6cc82ce6-f6b3-4295-85b9-353dcecbfe14.jpg"
     },
     {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\7a5589e5-53ea-429d-a061-c6dd722007cb.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/7a5589e5-53ea-429d-a061-c6dd722007cb#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "x6ez1thoep",
+      "Integrity": "Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\7a5589e5-53ea-429d-a061-c6dd722007cb.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\7f4a10a6-4cdf-4278-b9a5-bdf73cf245a3.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/7f4a10a6-4cdf-4278-b9a5-bdf73cf245a3#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "x6ez1thoep",
+      "Integrity": "Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\7f4a10a6-4cdf-4278-b9a5-bdf73cf245a3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\89a37ad5-639b-4134-8eb5-e67d7347bead.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/89a37ad5-639b-4134-8eb5-e67d7347bead#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "x6ez1thoep",
+      "Integrity": "Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\89a37ad5-639b-4134-8eb5-e67d7347bead.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\94fe1d9b-345f-4c1e-963f-ff9ff87620ce.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/94fe1d9b-345f-4c1e-963f-ff9ff87620ce#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ejd8893tvv",
+      "Integrity": "ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\94fe1d9b-345f-4c1e-963f-ff9ff87620ce.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\a23427f1-79bc-4de6-bddb-884b82b0c324.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/a23427f1-79bc-4de6-bddb-884b82b0c324#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "s66xte3hpb",
+      "Integrity": "lEIY+08wnvNk8hSeXw3GMXuLqog6b7MxPXW+B2hIC3c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\a23427f1-79bc-4de6-bddb-884b82b0c324.jpg"
+    },
+    {
       "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\dcbe3b1b-c8fa-4e9a-a167-27e5632c5c2f.jpg",
       "SourceId": "Bookstore-backend",
       "SourceType": "Discovered",
@@ -57,9 +393,974 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\dcbe3b1b-c8fa-4e9a-a167-27e5632c5c2f.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\f03afa16-bd27-4763-9274-d64f487509d3.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/f03afa16-bd27-4763-9274-d64f487509d3#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ejd8893tvv",
+      "Integrity": "ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\f03afa16-bd27-4763-9274-d64f487509d3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\f2b67682-e350-47b7-98da-53a16ca8cf7e.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/f2b67682-e350-47b7-98da-53a16ca8cf7e#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "brm9rbrsuo",
+      "Integrity": "iW3ctPGDuC/ZQcjHAXii8e0HJ3g6pHhOYagv52x+00E=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\f2b67682-e350-47b7-98da-53a16ca8cf7e.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\fa60e94d-9cf9-4cc8-8fe6-7179da7e28fe.jpg",
+      "SourceId": "Bookstore-backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\",
+      "BasePath": "_content/Bookstore-backend",
+      "RelativePath": "uploads/fa60e94d-9cf9-4cc8-8fe6-7179da7e28fe#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ejd8893tvv",
+      "Integrity": "ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\fa60e94d-9cf9-4cc8-8fe6-7179da7e28fe.jpg"
     }
   ],
   "Endpoints": [
+    {
+      "Route": "uploads/046e066c-4e51-434a-a34a-ed8d09847f67.ejd8893tvv.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\046e066c-4e51-434a-a34a-ed8d09847f67.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5761442"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:06:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ejd8893tvv"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/046e066c-4e51-434a-a34a-ed8d09847f67.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/046e066c-4e51-434a-a34a-ed8d09847f67.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\046e066c-4e51-434a-a34a-ed8d09847f67.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5761442"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:06:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/069903f5-9be5-4067-b9ee-01be82ba65d8.ejd8893tvv.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\069903f5-9be5-4067-b9ee-01be82ba65d8.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5761442"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:00:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ejd8893tvv"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/069903f5-9be5-4067-b9ee-01be82ba65d8.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/069903f5-9be5-4067-b9ee-01be82ba65d8.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\069903f5-9be5-4067-b9ee-01be82ba65d8.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5761442"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:00:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/18dd2569-bc2c-48e9-a738-cad59ad3cf3b.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\18dd2569-bc2c-48e9-a738-cad59ad3cf3b.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9005154"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lEIY+08wnvNk8hSeXw3GMXuLqog6b7MxPXW+B2hIC3c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:27:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-lEIY+08wnvNk8hSeXw3GMXuLqog6b7MxPXW+B2hIC3c="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/18dd2569-bc2c-48e9-a738-cad59ad3cf3b.s66xte3hpb.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\18dd2569-bc2c-48e9-a738-cad59ad3cf3b.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9005154"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lEIY+08wnvNk8hSeXw3GMXuLqog6b7MxPXW+B2hIC3c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:27:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "s66xte3hpb"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/18dd2569-bc2c-48e9-a738-cad59ad3cf3b.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-lEIY+08wnvNk8hSeXw3GMXuLqog6b7MxPXW+B2hIC3c="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/1b2e2fa1-968e-47d3-ad14-b6bce53eb7ff.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\1b2e2fa1-968e-47d3-ad14-b6bce53eb7ff.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5151526"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 05:15:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/1b2e2fa1-968e-47d3-ad14-b6bce53eb7ff.x6ez1thoep.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\1b2e2fa1-968e-47d3-ad14-b6bce53eb7ff.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5151526"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 05:15:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x6ez1thoep"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/1b2e2fa1-968e-47d3-ad14-b6bce53eb7ff.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/23f6c294-0527-45c5-abdb-0f3d8b979015.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\23f6c294-0527-45c5-abdb-0f3d8b979015.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5151526"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:21:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/23f6c294-0527-45c5-abdb-0f3d8b979015.x6ez1thoep.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\23f6c294-0527-45c5-abdb-0f3d8b979015.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5151526"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:21:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x6ez1thoep"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/23f6c294-0527-45c5-abdb-0f3d8b979015.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/35ff9ab8-341e-427a-9bd1-b0ce9f2f9b38.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\35ff9ab8-341e-427a-9bd1-b0ce9f2f9b38.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5151526"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:20:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/35ff9ab8-341e-427a-9bd1-b0ce9f2f9b38.x6ez1thoep.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\35ff9ab8-341e-427a-9bd1-b0ce9f2f9b38.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5151526"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:20:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x6ez1thoep"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/35ff9ab8-341e-427a-9bd1-b0ce9f2f9b38.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/4c891ccd-0fff-4f25-9b05-72466970d922.ejd8893tvv.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\4c891ccd-0fff-4f25-9b05-72466970d922.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5761442"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 05:49:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ejd8893tvv"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/4c891ccd-0fff-4f25-9b05-72466970d922.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/4c891ccd-0fff-4f25-9b05-72466970d922.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\4c891ccd-0fff-4f25-9b05-72466970d922.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5761442"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 05:49:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/526ae94b-899f-4b19-9eeb-72f1d9249864.ejd8893tvv.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\526ae94b-899f-4b19-9eeb-72f1d9249864.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5761442"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:16:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ejd8893tvv"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/526ae94b-899f-4b19-9eeb-72f1d9249864.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/526ae94b-899f-4b19-9eeb-72f1d9249864.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\526ae94b-899f-4b19-9eeb-72f1d9249864.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5761442"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:16:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/567e7f11-614b-4b9d-8ad9-86dc2a5ee2bf.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\567e7f11-614b-4b9d-8ad9-86dc2a5ee2bf.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9005154"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lEIY+08wnvNk8hSeXw3GMXuLqog6b7MxPXW+B2hIC3c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 06:50:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-lEIY+08wnvNk8hSeXw3GMXuLqog6b7MxPXW+B2hIC3c="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/567e7f11-614b-4b9d-8ad9-86dc2a5ee2bf.s66xte3hpb.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\567e7f11-614b-4b9d-8ad9-86dc2a5ee2bf.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9005154"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lEIY+08wnvNk8hSeXw3GMXuLqog6b7MxPXW+B2hIC3c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 06:50:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "s66xte3hpb"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/567e7f11-614b-4b9d-8ad9-86dc2a5ee2bf.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-lEIY+08wnvNk8hSeXw3GMXuLqog6b7MxPXW+B2hIC3c="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/600695cc-6b60-432a-bf46-507f05ef9e7b.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\600695cc-6b60-432a-bf46-507f05ef9e7b.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9005154"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lEIY+08wnvNk8hSeXw3GMXuLqog6b7MxPXW+B2hIC3c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 06:42:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-lEIY+08wnvNk8hSeXw3GMXuLqog6b7MxPXW+B2hIC3c="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/600695cc-6b60-432a-bf46-507f05ef9e7b.s66xte3hpb.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\600695cc-6b60-432a-bf46-507f05ef9e7b.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9005154"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lEIY+08wnvNk8hSeXw3GMXuLqog6b7MxPXW+B2hIC3c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 06:42:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "s66xte3hpb"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/600695cc-6b60-432a-bf46-507f05ef9e7b.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-lEIY+08wnvNk8hSeXw3GMXuLqog6b7MxPXW+B2hIC3c="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/645eca66-8583-410b-8876-cfaff02a27ff.ejd8893tvv.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\645eca66-8583-410b-8876-cfaff02a27ff.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5761442"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 05:47:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ejd8893tvv"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/645eca66-8583-410b-8876-cfaff02a27ff.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/645eca66-8583-410b-8876-cfaff02a27ff.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\645eca66-8583-410b-8876-cfaff02a27ff.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5761442"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 05:47:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ="
+        }
+      ]
+    },
     {
       "Route": "uploads/6cc82ce6-f6b3-4295-85b9-353dcecbfe14.brm9rbrsuo.jpg",
       "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\6cc82ce6-f6b3-4295-85b9-353dcecbfe14.jpg",
@@ -143,6 +1444,416 @@
       ]
     },
     {
+      "Route": "uploads/7a5589e5-53ea-429d-a061-c6dd722007cb.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\7a5589e5-53ea-429d-a061-c6dd722007cb.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5151526"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:19:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/7a5589e5-53ea-429d-a061-c6dd722007cb.x6ez1thoep.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\7a5589e5-53ea-429d-a061-c6dd722007cb.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5151526"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:19:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x6ez1thoep"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/7a5589e5-53ea-429d-a061-c6dd722007cb.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/7f4a10a6-4cdf-4278-b9a5-bdf73cf245a3.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\7f4a10a6-4cdf-4278-b9a5-bdf73cf245a3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5151526"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:17:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/7f4a10a6-4cdf-4278-b9a5-bdf73cf245a3.x6ez1thoep.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\7f4a10a6-4cdf-4278-b9a5-bdf73cf245a3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5151526"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:17:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x6ez1thoep"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/7f4a10a6-4cdf-4278-b9a5-bdf73cf245a3.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/89a37ad5-639b-4134-8eb5-e67d7347bead.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\89a37ad5-639b-4134-8eb5-e67d7347bead.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5151526"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 10:53:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/89a37ad5-639b-4134-8eb5-e67d7347bead.x6ez1thoep.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\89a37ad5-639b-4134-8eb5-e67d7347bead.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5151526"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 10:53:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x6ez1thoep"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/89a37ad5-639b-4134-8eb5-e67d7347bead.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/94fe1d9b-345f-4c1e-963f-ff9ff87620ce.ejd8893tvv.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\94fe1d9b-345f-4c1e-963f-ff9ff87620ce.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5761442"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:16:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ejd8893tvv"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/94fe1d9b-345f-4c1e-963f-ff9ff87620ce.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/94fe1d9b-345f-4c1e-963f-ff9ff87620ce.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\94fe1d9b-345f-4c1e-963f-ff9ff87620ce.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5761442"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:16:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/a23427f1-79bc-4de6-bddb-884b82b0c324.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\a23427f1-79bc-4de6-bddb-884b82b0c324.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9005154"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lEIY+08wnvNk8hSeXw3GMXuLqog6b7MxPXW+B2hIC3c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 06:41:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-lEIY+08wnvNk8hSeXw3GMXuLqog6b7MxPXW+B2hIC3c="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/a23427f1-79bc-4de6-bddb-884b82b0c324.s66xte3hpb.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\a23427f1-79bc-4de6-bddb-884b82b0c324.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9005154"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lEIY+08wnvNk8hSeXw3GMXuLqog6b7MxPXW+B2hIC3c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 06:41:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "s66xte3hpb"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/a23427f1-79bc-4de6-bddb-884b82b0c324.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-lEIY+08wnvNk8hSeXw3GMXuLqog6b7MxPXW+B2hIC3c="
+        }
+      ]
+    },
+    {
       "Route": "uploads/dcbe3b1b-c8fa-4e9a-a167-27e5632c5c2f.jpg",
       "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\dcbe3b1b-c8fa-4e9a-a167-27e5632c5c2f.jpg",
       "Selectors": [],
@@ -221,6 +1932,252 @@
         {
           "Name": "integrity",
           "Value": "sha256-Z4hw7I/w0sGVoXhCxlxT6+fPy/BKhkd0TBZVf7GITl8="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/f03afa16-bd27-4763-9274-d64f487509d3.ejd8893tvv.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\f03afa16-bd27-4763-9274-d64f487509d3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5761442"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:06:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ejd8893tvv"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/f03afa16-bd27-4763-9274-d64f487509d3.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/f03afa16-bd27-4763-9274-d64f487509d3.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\f03afa16-bd27-4763-9274-d64f487509d3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5761442"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:06:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/f2b67682-e350-47b7-98da-53a16ca8cf7e.brm9rbrsuo.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\f2b67682-e350-47b7-98da-53a16ca8cf7e.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6056936"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iW3ctPGDuC/ZQcjHAXii8e0HJ3g6pHhOYagv52x+00E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 04:53:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "brm9rbrsuo"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/f2b67682-e350-47b7-98da-53a16ca8cf7e.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-iW3ctPGDuC/ZQcjHAXii8e0HJ3g6pHhOYagv52x+00E="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/f2b67682-e350-47b7-98da-53a16ca8cf7e.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\f2b67682-e350-47b7-98da-53a16ca8cf7e.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6056936"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iW3ctPGDuC/ZQcjHAXii8e0HJ3g6pHhOYagv52x+00E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 04:53:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-iW3ctPGDuC/ZQcjHAXii8e0HJ3g6pHhOYagv52x+00E="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/fa60e94d-9cf9-4cc8-8fe6-7179da7e28fe.ejd8893tvv.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\fa60e94d-9cf9-4cc8-8fe6-7179da7e28fe.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5761442"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:16:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ejd8893tvv"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/fa60e94d-9cf9-4cc8-8fe6-7179da7e28fe.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/fa60e94d-9cf9-4cc8-8fe6-7179da7e28fe.jpg",
+      "AssetFile": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\fa60e94d-9cf9-4cc8-8fe6-7179da7e28fe.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5761442"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 07:16:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ds0XLUyXwizKGkfjaWduAkNm+dho0IEECL29BgYsQWQ="
         }
       ]
     }

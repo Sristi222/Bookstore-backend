@@ -1,12 +1,88 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\046e066c-4e51-434a-a34a-ed8d09847f67.jpg",
+      "PackagePath": "staticwebassets\\uploads\\046e066c-4e51-434a-a34a-ed8d09847f67.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\069903f5-9be5-4067-b9ee-01be82ba65d8.jpg",
+      "PackagePath": "staticwebassets\\uploads\\069903f5-9be5-4067-b9ee-01be82ba65d8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\18dd2569-bc2c-48e9-a738-cad59ad3cf3b.jpg",
+      "PackagePath": "staticwebassets\\uploads\\18dd2569-bc2c-48e9-a738-cad59ad3cf3b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\1b2e2fa1-968e-47d3-ad14-b6bce53eb7ff.jpg",
+      "PackagePath": "staticwebassets\\uploads\\1b2e2fa1-968e-47d3-ad14-b6bce53eb7ff.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\23f6c294-0527-45c5-abdb-0f3d8b979015.jpg",
+      "PackagePath": "staticwebassets\\uploads\\23f6c294-0527-45c5-abdb-0f3d8b979015.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\35ff9ab8-341e-427a-9bd1-b0ce9f2f9b38.jpg",
+      "PackagePath": "staticwebassets\\uploads\\35ff9ab8-341e-427a-9bd1-b0ce9f2f9b38.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\4c891ccd-0fff-4f25-9b05-72466970d922.jpg",
+      "PackagePath": "staticwebassets\\uploads\\4c891ccd-0fff-4f25-9b05-72466970d922.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\526ae94b-899f-4b19-9eeb-72f1d9249864.jpg",
+      "PackagePath": "staticwebassets\\uploads\\526ae94b-899f-4b19-9eeb-72f1d9249864.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\567e7f11-614b-4b9d-8ad9-86dc2a5ee2bf.jpg",
+      "PackagePath": "staticwebassets\\uploads\\567e7f11-614b-4b9d-8ad9-86dc2a5ee2bf.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\600695cc-6b60-432a-bf46-507f05ef9e7b.jpg",
+      "PackagePath": "staticwebassets\\uploads\\600695cc-6b60-432a-bf46-507f05ef9e7b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\645eca66-8583-410b-8876-cfaff02a27ff.jpg",
+      "PackagePath": "staticwebassets\\uploads\\645eca66-8583-410b-8876-cfaff02a27ff.jpg"
+    },
+    {
       "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\6cc82ce6-f6b3-4295-85b9-353dcecbfe14.jpg",
       "PackagePath": "staticwebassets\\uploads\\6cc82ce6-f6b3-4295-85b9-353dcecbfe14.jpg"
     },
     {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\7a5589e5-53ea-429d-a061-c6dd722007cb.jpg",
+      "PackagePath": "staticwebassets\\uploads\\7a5589e5-53ea-429d-a061-c6dd722007cb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\7f4a10a6-4cdf-4278-b9a5-bdf73cf245a3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\7f4a10a6-4cdf-4278-b9a5-bdf73cf245a3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\89a37ad5-639b-4134-8eb5-e67d7347bead.jpg",
+      "PackagePath": "staticwebassets\\uploads\\89a37ad5-639b-4134-8eb5-e67d7347bead.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\94fe1d9b-345f-4c1e-963f-ff9ff87620ce.jpg",
+      "PackagePath": "staticwebassets\\uploads\\94fe1d9b-345f-4c1e-963f-ff9ff87620ce.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\a23427f1-79bc-4de6-bddb-884b82b0c324.jpg",
+      "PackagePath": "staticwebassets\\uploads\\a23427f1-79bc-4de6-bddb-884b82b0c324.jpg"
+    },
+    {
       "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\dcbe3b1b-c8fa-4e9a-a167-27e5632c5c2f.jpg",
       "PackagePath": "staticwebassets\\uploads\\dcbe3b1b-c8fa-4e9a-a167-27e5632c5c2f.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\f03afa16-bd27-4763-9274-d64f487509d3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\f03afa16-bd27-4763-9274-d64f487509d3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\f2b67682-e350-47b7-98da-53a16ca8cf7e.jpg",
+      "PackagePath": "staticwebassets\\uploads\\f2b67682-e350-47b7-98da-53a16ca8cf7e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SRISTI SHRETHA\\source\\repos\\Try application\\Try application\\wwwroot\\uploads\\fa60e94d-9cf9-4cc8-8fe6-7179da7e28fe.jpg",
+      "PackagePath": "staticwebassets\\uploads\\fa60e94d-9cf9-4cc8-8fe6-7179da7e28fe.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Bookstore-backend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

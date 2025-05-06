@@ -67,6 +67,74 @@
         }
       }
     },
+    "/api/Banners": {
+      "get": {
+        "tags": [
+          "Banners"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Banners"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Title": {
+                    "type": "string"
+                  },
+                  "SubTitle": {
+                    "type": "string"
+                  },
+                  "StartDateTime": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "EndDateTime": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "Title": {
+                  "style": "form"
+                },
+                "SubTitle": {
+                  "style": "form"
+                },
+                "StartDateTime": {
+                  "style": "form"
+                },
+                "EndDateTime": {
+                  "style": "form"
+                },
+                "image": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Products": {
       "get": {
         "tags": [
@@ -111,12 +179,56 @@
                   "Name": {
                     "type": "string"
                   },
+                  "Author": {
+                    "type": "string"
+                  },
+                  "Genre": {
+                    "type": "string"
+                  },
+                  "Publisher": {
+                    "type": "string"
+                  },
+                  "ISBN": {
+                    "type": "string"
+                  },
                   "Description": {
                     "type": "string"
+                  },
+                  "Language": {
+                    "type": "string"
+                  },
+                  "Format": {
+                    "type": "string"
+                  },
+                  "PublicationDate": {
+                    "type": "string",
+                    "format": "date-time"
                   },
                   "Price": {
                     "type": "number",
                     "format": "double"
+                  },
+                  "DiscountPercent": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "DiscountStartDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "DiscountEndDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "OnSale": {
+                    "type": "boolean"
+                  },
+                  "StockQuantity": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "IsAvailableInStore": {
+                    "type": "boolean"
                   },
                   "image": {
                     "type": "string",
@@ -128,10 +240,49 @@
                 "Name": {
                   "style": "form"
                 },
+                "Author": {
+                  "style": "form"
+                },
+                "Genre": {
+                  "style": "form"
+                },
+                "Publisher": {
+                  "style": "form"
+                },
+                "ISBN": {
+                  "style": "form"
+                },
                 "Description": {
                   "style": "form"
                 },
+                "Language": {
+                  "style": "form"
+                },
+                "Format": {
+                  "style": "form"
+                },
+                "PublicationDate": {
+                  "style": "form"
+                },
                 "Price": {
+                  "style": "form"
+                },
+                "DiscountPercent": {
+                  "style": "form"
+                },
+                "DiscountStartDate": {
+                  "style": "form"
+                },
+                "DiscountEndDate": {
+                  "style": "form"
+                },
+                "OnSale": {
+                  "style": "form"
+                },
+                "StockQuantity": {
+                  "style": "form"
+                },
+                "IsAvailableInStore": {
                   "style": "form"
                 },
                 "image": {
@@ -141,6 +292,193 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Products/{id}": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Products"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "Author": {
+                    "type": "string"
+                  },
+                  "Genre": {
+                    "type": "string"
+                  },
+                  "Publisher": {
+                    "type": "string"
+                  },
+                  "ISBN": {
+                    "type": "string"
+                  },
+                  "Description": {
+                    "type": "string"
+                  },
+                  "Language": {
+                    "type": "string"
+                  },
+                  "Format": {
+                    "type": "string"
+                  },
+                  "PublicationDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Price": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "DiscountPercent": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "DiscountStartDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "DiscountEndDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "OnSale": {
+                    "type": "boolean"
+                  },
+                  "StockQuantity": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "IsAvailableInStore": {
+                    "type": "boolean"
+                  },
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "Name": {
+                  "style": "form"
+                },
+                "Author": {
+                  "style": "form"
+                },
+                "Genre": {
+                  "style": "form"
+                },
+                "Publisher": {
+                  "style": "form"
+                },
+                "ISBN": {
+                  "style": "form"
+                },
+                "Description": {
+                  "style": "form"
+                },
+                "Language": {
+                  "style": "form"
+                },
+                "Format": {
+                  "style": "form"
+                },
+                "PublicationDate": {
+                  "style": "form"
+                },
+                "Price": {
+                  "style": "form"
+                },
+                "DiscountPercent": {
+                  "style": "form"
+                },
+                "DiscountStartDate": {
+                  "style": "form"
+                },
+                "DiscountEndDate": {
+                  "style": "form"
+                },
+                "OnSale": {
+                  "style": "form"
+                },
+                "StockQuantity": {
+                  "style": "form"
+                },
+                "IsAvailableInStore": {
+                  "style": "form"
+                },
+                "image": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Products"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -180,29 +518,6 @@
           {
             "name": "maxPrice",
             "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Products/{id}": {
-      "delete": {
-        "tags": [
-          "Products"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
