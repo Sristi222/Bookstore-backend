@@ -227,6 +227,9 @@ namespace Try_application.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
                     b.Property<DateTime?>("StartDateTime")
                         .HasColumnType("timestamp with time zone");
 

@@ -22,47 +22,108 @@ namespace Try_application.Controllers
             _env = env;
         }
 
-        // ✅ GET ALL with pagination
+        // ✅ GET ALL products
         [HttpGet]
         public IActionResult GetProducts(int page = 1, int limit = 10)
         {
+            var now = DateTime.UtcNow;
             var totalItems = _context.Products.Count();
+
             var products = _context.Products
                 .Skip((page - 1) * limit)
                 .Take(limit)
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Name,
+                    p.Description,
+                    p.Image,
+                    p.Author,
+                    p.Genre,
+                    p.Publisher,
+                    p.ISBN,
+                    p.Language,
+                    p.Format,
+                    p.PublicationDate,
+                    p.Price,
+                    p.DiscountPercent,
+                    p.DiscountStartDate,
+                    p.DiscountEndDate,
+                    p.OnSale,
+                    p.StockQuantity,
+                    p.IsAvailableInStore,
+                    FinalPrice = (p.OnSale && p.DiscountPercent.HasValue &&
+                                 (!p.DiscountStartDate.HasValue || p.DiscountStartDate <= now) &&
+                                 (!p.DiscountEndDate.HasValue || p.DiscountEndDate >= now))
+                                ? Math.Round(p.Price - (p.Price * (decimal)p.DiscountPercent.Value / 100), 2)
+                                : p.Price
+                })
                 .ToList();
 
             return Ok(new { total = totalItems, page, limit, data = products });
         }
 
-        // ✅ GET single product
+        // ✅ GET product by id
         [HttpGet("{id}")]
         public IActionResult GetProductById(int id)
         {
-            var product = _context.Products.FirstOrDefault(p => p.Id == id);
+            var now = DateTime.UtcNow;
+
+            var product = _context.Products
+                .Where(p => p.Id == id)
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Name,
+                    p.Description,
+                    p.Image,
+                    p.Author,
+                    p.Genre,
+                    p.Publisher,
+                    p.ISBN,
+                    p.Language,
+                    p.Format,
+                    p.PublicationDate,
+                    p.Price,
+                    p.DiscountPercent,
+                    p.DiscountStartDate,
+                    p.DiscountEndDate,
+                    p.OnSale,
+                    p.StockQuantity,
+                    p.IsAvailableInStore,
+                    FinalPrice = (p.OnSale && p.DiscountPercent.HasValue &&
+                                 (!p.DiscountStartDate.HasValue || p.DiscountStartDate <= now) &&
+                                 (!p.DiscountEndDate.HasValue || p.DiscountEndDate >= now))
+                                ? Math.Round(p.Price - (p.Price * (decimal)p.DiscountPercent.Value / 100), 2)
+                                : p.Price
+                })
+                .FirstOrDefault();
+
             if (product == null) return NotFound(new { message = "Product not found." });
+
             return Ok(product);
         }
 
-        // ✅ SEARCH
+        // ✅ SEARCH products
         [HttpGet("search")]
         public IActionResult SearchProducts(string? q, string? sort = "name", int? minPrice = null, int? maxPrice = null)
         {
+            var now = DateTime.UtcNow;
             var query = _context.Products.AsQueryable();
 
             if (!string.IsNullOrEmpty(q))
+            {
                 query = query.Where(p =>
                     (p.Name != null && p.Name.Contains(q)) ||
                     (p.Description != null && p.Description.Contains(q)) ||
                     (p.Author != null && p.Author.Contains(q)) ||
                     (p.Genre != null && p.Genre.Contains(q)) ||
-                    (p.ISBN != null && p.ISBN.Contains(q)));
+                    (p.ISBN != null && p.ISBN.Contains(q))
+                );
+            }
 
-            if (minPrice.HasValue)
-                query = query.Where(p => p.Price >= minPrice.Value);
-
-            if (maxPrice.HasValue)
-                query = query.Where(p => p.Price <= maxPrice.Value);
+            if (minPrice.HasValue) query = query.Where(p => p.Price >= minPrice.Value);
+            if (maxPrice.HasValue) query = query.Where(p => p.Price <= maxPrice.Value);
 
             query = sort switch
             {
@@ -73,26 +134,54 @@ namespace Try_application.Controllers
                 _ => query
             };
 
-            return Ok(query.ToList());
+            var results = query.Select(p => new
+            {
+                p.Id,
+                p.Name,
+                p.Description,
+                p.Image,
+                p.Author,
+                p.Genre,
+                p.Publisher,
+                p.ISBN,
+                p.Language,
+                p.Format,
+                p.PublicationDate,
+                p.Price,
+                p.DiscountPercent,
+                p.DiscountStartDate,
+                p.DiscountEndDate,
+                p.OnSale,
+                p.StockQuantity,
+                p.IsAvailableInStore,
+                FinalPrice = (p.OnSale && p.DiscountPercent.HasValue &&
+                             (!p.DiscountStartDate.HasValue || p.DiscountStartDate <= now) &&
+                             (!p.DiscountEndDate.HasValue || p.DiscountEndDate >= now))
+                            ? Math.Round(p.Price - (p.Price * (decimal)p.DiscountPercent.Value / 100), 2)
+                            : p.Price
+            }).ToList();
+
+            return Ok(results);
         }
 
-        // ✅ ADD PRODUCT
+        // ✅ ADD PRODUCT - updated to return product with FinalPrice
         [HttpPost]
         public async Task<IActionResult> AddProduct([FromForm] ProductDto dto, IFormFile image)
         {
             if (dto == null || image == null)
-                return BadRequest(new { message = "Invalid product or image." });
+                return BadRequest(new { message = "Product or image is missing." });
 
             try
             {
                 if (string.IsNullOrEmpty(_env.WebRootPath))
-                    return StatusCode(500, new { message = "Web root path is not set." });
+                    return StatusCode(500, new { message = "WebRootPath is not configured." });
 
-                var fileName = Guid.NewGuid() + Path.GetExtension(image.FileName);
-                var uploadFolder = Path.Combine(_env.WebRootPath, "uploads");
-                Directory.CreateDirectory(uploadFolder);
+                var uploadsFolder = Path.Combine(_env.WebRootPath, "uploads");
+                Directory.CreateDirectory(uploadsFolder);
 
-                var filePath = Path.Combine(uploadFolder, fileName);
+                var fileName = $"{Guid.NewGuid()}{Path.GetExtension(image.FileName)}";
+                var filePath = Path.Combine(uploadsFolder, fileName);
+
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     await image.CopyToAsync(stream);
@@ -124,15 +213,43 @@ namespace Try_application.Controllers
                 _context.Products.Add(product);
                 await _context.SaveChangesAsync();
 
-                return Ok(product);
+                var now = DateTime.UtcNow;
+                var productDto = new
+                {
+                    product.Id,
+                    product.Name,
+                    product.Description,
+                    product.Image,
+                    product.Author,
+                    product.Genre,
+                    product.Publisher,
+                    product.ISBN,
+                    product.Language,
+                    product.Format,
+                    product.PublicationDate,
+                    product.Price,
+                    product.DiscountPercent,
+                    product.DiscountStartDate,
+                    product.DiscountEndDate,
+                    product.OnSale,
+                    product.StockQuantity,
+                    product.IsAvailableInStore,
+                    FinalPrice = (product.OnSale && product.DiscountPercent.HasValue &&
+                                 (!product.DiscountStartDate.HasValue || product.DiscountStartDate <= now) &&
+                                 (!product.DiscountEndDate.HasValue || product.DiscountEndDate >= now))
+                                ? Math.Round(product.Price - (product.Price * (decimal)product.DiscountPercent.Value / 100), 2)
+                                : product.Price
+                };
+
+                return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, productDto);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "Error saving product", error = ex.Message, inner = ex.InnerException?.Message });
+                return StatusCode(500, new { message = "Error adding product.", error = ex.Message, inner = ex.InnerException?.Message });
             }
         }
 
-        // ✅ UPDATE PRODUCT
+        // ✅ UPDATE PRODUCT - updated to return product with FinalPrice
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProduct(int id, [FromForm] ProductDto dto, IFormFile? image)
         {
@@ -143,11 +260,12 @@ namespace Try_application.Controllers
             {
                 if (image != null)
                 {
-                    var fileName = Guid.NewGuid() + Path.GetExtension(image.FileName);
-                    var uploadFolder = Path.Combine(_env.WebRootPath, "uploads");
-                    Directory.CreateDirectory(uploadFolder);
+                    var uploadsFolder = Path.Combine(_env.WebRootPath, "uploads");
+                    Directory.CreateDirectory(uploadsFolder);
 
-                    var filePath = Path.Combine(uploadFolder, fileName);
+                    var fileName = $"{Guid.NewGuid()}{Path.GetExtension(image.FileName)}";
+                    var filePath = Path.Combine(uploadsFolder, fileName);
+
                     using (var stream = new FileStream(filePath, FileMode.Create))
                     {
                         await image.CopyToAsync(stream);
@@ -176,23 +294,52 @@ namespace Try_application.Controllers
                 _context.Products.Update(product);
                 await _context.SaveChangesAsync();
 
-                return Ok(product);
+                var now = DateTime.UtcNow;
+                var productDto = new
+                {
+                    product.Id,
+                    product.Name,
+                    product.Description,
+                    product.Image,
+                    product.Author,
+                    product.Genre,
+                    product.Publisher,
+                    product.ISBN,
+                    product.Language,
+                    product.Format,
+                    product.PublicationDate,
+                    product.Price,
+                    product.DiscountPercent,
+                    product.DiscountStartDate,
+                    product.DiscountEndDate,
+                    product.OnSale,
+                    product.StockQuantity,
+                    product.IsAvailableInStore,
+                    FinalPrice = (product.OnSale && product.DiscountPercent.HasValue &&
+                                 (!product.DiscountStartDate.HasValue || product.DiscountStartDate <= now) &&
+                                 (!product.DiscountEndDate.HasValue || product.DiscountEndDate >= now))
+                                ? Math.Round(product.Price - (product.Price * (decimal)product.DiscountPercent.Value / 100), 2)
+                                : product.Price
+                };
+
+                return Ok(productDto);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "Error updating product", error = ex.Message, inner = ex.InnerException?.Message });
+                return StatusCode(500, new { message = "Error updating product.", error = ex.Message, inner = ex.InnerException?.Message });
             }
         }
 
         // ✅ DELETE PRODUCT
         [HttpDelete("{id}")]
-        public IActionResult DeleteProduct(int id)
+        public async Task<IActionResult> DeleteProduct(int id)
         {
-            var prod = _context.Products.FirstOrDefault(p => p.Id == id);
-            if (prod == null) return NotFound(new { message = "Product not found." });
+            var product = _context.Products.FirstOrDefault(p => p.Id == id);
+            if (product == null) return NotFound(new { message = "Product not found." });
 
-            _context.Products.Remove(prod);
-            _context.SaveChanges();
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
+
             return Ok(new { message = "Product deleted." });
         }
     }

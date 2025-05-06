@@ -1,4 +1,6 @@
-﻿namespace Try_application.Database.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Try_application.Database.Entities
 {
     public class Product
     {
@@ -31,5 +33,8 @@
 
         public double Rating { get; set; }           // Average Rating
         public int TotalSold { get; set; }           // For popularity tracking
+
+        
+
     }
 }

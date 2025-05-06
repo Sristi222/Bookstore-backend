@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Threading.Tasks;
 using Try_application.Database;
 using Try_application.Database.Entities;
@@ -22,57 +21,111 @@ namespace Try_application.Controllers
             _env = env;
         }
 
-        // ✅ GET active banner (checks if current time within StartDateTime - EndDateTime)
+        // ✅ GET ALL banners
         [HttpGet]
+        public IActionResult GetAllBanners()
+        {
+            var banners = _context.Banners.ToList();
+            return Ok(banners);
+        }
+
+        // ✅ GET ACTIVE banner
+        [HttpGet("active")]
         public IActionResult GetActiveBanner()
         {
-            var now = DateTime.UtcNow;
-            var banner = _context.Banners
-                .Where(b =>
-                    (!b.StartDateTime.HasValue || b.StartDateTime <= now) &&
-                    (!b.EndDateTime.HasValue || b.EndDateTime >= now))
-                .FirstOrDefault();
-
+            var banner = _context.Banners.FirstOrDefault(b => b.IsActive);
             if (banner == null)
-                return NotFound(new { message = "No active banner at this time." });
+                return NotFound(new { message = "No active banner." });
 
             return Ok(banner);
         }
 
-        // ✅ UPDATE banner (admin can edit title, subtitle, start/end datetime, and optionally upload image)
-        [HttpPut]
-        public async Task<IActionResult> UpdateBanner([FromForm] BannerDto dto, IFormFile? image)
+        // ✅ CREATE new banner
+        [HttpPost]
+        public async Task<IActionResult> CreateBanner([FromForm] BannerDto dto, IFormFile? image)
         {
-            var banner = _context.Banners.FirstOrDefault();
-            if (banner == null)
+            var banner = new Banner
             {
-                banner = new Banner();
-                _context.Banners.Add(banner);
+                Title = dto.Title,
+                SubTitle = dto.SubTitle,
+                StartDateTime = dto.StartDateTime.HasValue ? DateTime.SpecifyKind(dto.StartDateTime.Value, DateTimeKind.Utc) : null,
+                EndDateTime = dto.EndDateTime.HasValue ? DateTime.SpecifyKind(dto.EndDateTime.Value, DateTimeKind.Utc) : null,
+                UpdatedAt = DateTime.UtcNow,
+                IsActive = false // default inactive
+            };
+
+            if (image != null && image.Length > 0)
+            {
+                banner.ImageUrl = await SaveImageFile(image);
             }
+
+            _context.Banners.Add(banner);
+            await _context.SaveChangesAsync();
+
+            return Ok(banner);
+        }
+
+        // ✅ UPDATE banner
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateBanner(int id, [FromForm] BannerDto dto, IFormFile? image)
+        {
+            var banner = await _context.Banners.FindAsync(id);
+            if (banner == null) return NotFound(new { message = "Banner not found." });
 
             banner.Title = dto.Title;
             banner.SubTitle = dto.SubTitle;
-            banner.StartDateTime = dto.StartDateTime;
-            banner.EndDateTime = dto.EndDateTime;
+            banner.StartDateTime = dto.StartDateTime.HasValue ? DateTime.SpecifyKind(dto.StartDateTime.Value, DateTimeKind.Utc) : null;
+            banner.EndDateTime = dto.EndDateTime.HasValue ? DateTime.SpecifyKind(dto.EndDateTime.Value, DateTimeKind.Utc) : null;
             banner.UpdatedAt = DateTime.UtcNow;
 
-            if (image != null)
+            if (image != null && image.Length > 0)
             {
-                var fileName = Guid.NewGuid() + Path.GetExtension(image.FileName);
-                var uploadFolder = Path.Combine(_env.WebRootPath, "uploads");
-                Directory.CreateDirectory(uploadFolder);
-
-                var filePath = Path.Combine(uploadFolder, fileName);
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await image.CopyToAsync(stream);
-                }
-
-                banner.ImageUrl = $"/uploads/{fileName}";
+                banner.ImageUrl = await SaveImageFile(image);
             }
 
             await _context.SaveChangesAsync();
             return Ok(banner);
+        }
+
+        // ✅ DELETE banner
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteBanner(int id)
+        {
+            var banner = await _context.Banners.FindAsync(id);
+            if (banner == null) return NotFound(new { message = "Banner not found." });
+
+            _context.Banners.Remove(banner);
+            await _context.SaveChangesAsync();
+            return Ok(new { message = "Banner deleted." });
+        }
+
+        // ✅ ACTIVATE banner (only one active at a time)
+        [HttpPut("{id}/activate")]
+        public async Task<IActionResult> ActivateBanner(int id)
+        {
+            var banner = await _context.Banners.FindAsync(id);
+            if (banner == null) return NotFound(new { message = "Banner not found." });
+
+            foreach (var b in _context.Banners)
+                b.IsActive = (b.Id == id);
+
+            await _context.SaveChangesAsync();
+            return Ok(new { message = $"Banner {id} is now active." });
+        }
+
+        // ✅ helper: save image to /uploads
+        private async Task<string> SaveImageFile(IFormFile image)
+        {
+            var uploadFolder = Path.Combine(_env.WebRootPath, "uploads");
+            Directory.CreateDirectory(uploadFolder);
+
+            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(image.FileName)}";
+            var filePath = Path.Combine(uploadFolder, fileName);
+
+            using var stream = new FileStream(filePath, FileMode.Create);
+            await image.CopyToAsync(stream);
+
+            return $"/uploads/{fileName}";
         }
     }
 }
