@@ -6,30 +6,38 @@ using Try_application.Database;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
 
-var builder = WebApplication.CreateBuilder(args);
+// ✅ Set WebRootPath explicitly
+var builder = WebApplication.CreateBuilder(new WebApplicationOptions
+{
+    WebRootPath = "wwwroot",
+    Args = args
+});
 
-// 1️⃣ ✅ Add DbContext with PostgreSQL
+// 1️⃣ Database connection
 builder.Services.AddDbContext<AppDBContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// 2️⃣ ✅ Add Identity services
+// 2️⃣ Identity
 builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<AppDBContext>()
     .AddDefaultTokenProviders();
 
-// 3️⃣ ✅ Add CORS
+// 3️⃣ CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowReactApp",
-        policy => policy
-            .WithOrigins("http://localhost:3000") // frontend origin
+    options.AddPolicy("AllowReactApp", policy =>
+        policy.WithOrigins("http://localhost:3000")
             .AllowAnyHeader()
             .AllowAnyMethod());
 });
 
-// 4️⃣ ✅ Configure JWT authentication
+// 4️⃣ JWT auth
 var jwtKey = builder.Configuration["JwtSettings:Key"];
-var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
+if (string.IsNullOrWhiteSpace(jwtKey))
+{
+    Console.WriteLine("⚠️ JWT Key is missing in config; using fallback key!");
+}
+var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey ?? "DefaultHardCodedKeyChangeThis"));
 
 builder.Services.AddAuthentication(options =>
 {
@@ -48,48 +56,79 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// 5️⃣ ✅ Add controllers + Swagger
+// 5️⃣ Swagger + controllers
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// 6️⃣ ✅ Middleware
+// ✅ Migration and missing table check
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<AppDBContext>();
+        Console.WriteLine("Applying database migrations...");
+        context.Database.Migrate();
+        Console.WriteLine("✅ Database migrations applied.");
+
+        // Check if CartItems table exists; if not, create it
+        var sql = @"
+            CREATE TABLE IF NOT EXISTS ""CartItems"" (
+                ""Id"" SERIAL PRIMARY KEY,
+                ""UserId"" TEXT NULL,
+                ""ProductId"" INTEGER NOT NULL,
+                ""Quantity"" INTEGER NOT NULL,
+                ""UnitPrice"" DECIMAL(18,2) NOT NULL,
+                ""DateAdded"" TIMESTAMP NOT NULL,
+                CONSTRAINT ""FK_CartItems_Products_ProductId"" FOREIGN KEY (""ProductId"") 
+                    REFERENCES ""Products"" (""Id"") ON DELETE CASCADE
+            );
+            CREATE INDEX IF NOT EXISTS ""IX_CartItems_ProductId"" ON ""CartItems"" (""ProductId"");
+        ";
+        context.Database.ExecuteSqlRaw(sql);
+        Console.WriteLine("✅ CartItems table ensured.");
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "❌ Error applying migrations or initializing tables.");
+        Console.WriteLine($"❌ Migration error: {ex.Message}");
+    }
+}
+
+// ✅ Middleware
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-// 🚩 ADD CORS BEFORE Authentication
+app.UseStaticFiles();
 app.UseCors("AllowReactApp");
-
 app.UseHttpsRedirection();
-
-// 🚩 Auth middlewares
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
-// ✅ Seed admin user
+// ✅ Seed admin
 using (var scope = app.Services.CreateScope())
 {
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
     string adminEmail = "admin@gmail.com";
-    string adminPassword = "Admin@123"; // ⚠️ Must follow Identity password rules
+    string adminPassword = "Admin@123";
     string adminRole = "Admin";
 
-    // 1️⃣ Check if role exists → create if not
     if (!await roleManager.RoleExistsAsync(adminRole))
     {
         await roleManager.CreateAsync(new IdentityRole(adminRole));
+        Console.WriteLine($"✅ Role '{adminRole}' created.");
     }
 
-    // 2️⃣ Check if admin user exists → create if not
     var adminUser = await userManager.FindByEmailAsync(adminEmail);
     if (adminUser == null)
     {
@@ -106,7 +145,7 @@ using (var scope = app.Services.CreateScope())
         if (result.Succeeded)
         {
             await userManager.AddToRoleAsync(user, adminRole);
-            Console.WriteLine("✅ Admin user created successfully.");
+            Console.WriteLine("✅ Admin user created.");
         }
         else
         {
@@ -122,6 +161,5 @@ using (var scope = app.Services.CreateScope())
         Console.WriteLine("✅ Admin user already exists.");
     }
 }
+
 app.Run();
-
-
