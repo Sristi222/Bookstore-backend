@@ -24,5 +24,7 @@
 
         public int StockQuantity { get; set; }
         public bool IsAvailableInStore { get; set; }
+
+        
     }
 }

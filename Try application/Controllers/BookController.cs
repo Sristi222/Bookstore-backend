@@ -22,32 +22,93 @@ namespace Try_application.Controllers
             _env = env;
         }
 
-        // ✅ GET ALL with pagination
+        // ✅ GET ALL products
         [HttpGet]
         public IActionResult GetProducts(int page = 1, int limit = 10)
         {
+            var now = DateTime.UtcNow;
             var totalItems = _context.Products.Count();
+
             var products = _context.Products
                 .Skip((page - 1) * limit)
                 .Take(limit)
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Name,
+                    p.Description,
+                    p.Image,
+                    p.Author,
+                    p.Genre,
+                    p.Publisher,
+                    p.ISBN,
+                    p.Language,
+                    p.Format,
+                    p.PublicationDate,
+                    p.Price,
+                    p.DiscountPercent,
+                    p.DiscountStartDate,
+                    p.DiscountEndDate,
+                    p.OnSale,
+                    p.StockQuantity,
+                    p.IsAvailableInStore,
+                    FinalPrice = (p.OnSale && p.DiscountPercent.HasValue &&
+                                 (!p.DiscountStartDate.HasValue || p.DiscountStartDate <= now) &&
+                                 (!p.DiscountEndDate.HasValue || p.DiscountEndDate >= now))
+                                ? Math.Round(p.Price - (p.Price * (decimal)p.DiscountPercent.Value / 100), 2)
+                                : p.Price
+                })
                 .ToList();
 
             return Ok(new { total = totalItems, page, limit, data = products });
         }
 
-        // ✅ GET single product
+        // ✅ GET product by id
         [HttpGet("{id}")]
         public IActionResult GetProductById(int id)
         {
-            var product = _context.Products.FirstOrDefault(p => p.Id == id);
+            var now = DateTime.UtcNow;
+
+            var product = _context.Products
+                .Where(p => p.Id == id)
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Name,
+                    p.Description,
+                    p.Image,
+                    p.Author,
+                    p.Genre,
+                    p.Publisher,
+                    p.ISBN,
+                    p.Language,
+                    p.Format,
+                    p.PublicationDate,
+                    p.Price,
+                    p.DiscountPercent,
+                    p.DiscountStartDate,
+                    p.DiscountEndDate,
+                    p.OnSale,
+                    p.StockQuantity,
+                    p.IsAvailableInStore,
+                    FinalPrice = (p.OnSale && p.DiscountPercent.HasValue &&
+                                 (!p.DiscountStartDate.HasValue || p.DiscountStartDate <= now) &&
+                                 (!p.DiscountEndDate.HasValue || p.DiscountEndDate >= now))
+                                ? Math.Round(p.Price - (p.Price * (decimal)p.DiscountPercent.Value / 100), 2)
+                                : p.Price
+                })
+                .FirstOrDefault();
+
             if (product == null) return NotFound(new { message = "Product not found." });
+
             return Ok(product);
         }
 
-        // ✅ SEARCH
+        // ✅ SEARCH products
         [HttpGet("search")]
         public IActionResult SearchProducts(string? q, string? sort = "name", int? minPrice = null, int? maxPrice = null)
         {
+            var now = DateTime.UtcNow;
             var query = _context.Products.AsQueryable();
 
             if (!string.IsNullOrEmpty(q))
@@ -73,10 +134,37 @@ namespace Try_application.Controllers
                 _ => query
             };
 
-            return Ok(query.ToList());
+            var results = query.Select(p => new
+            {
+                p.Id,
+                p.Name,
+                p.Description,
+                p.Image,
+                p.Author,
+                p.Genre,
+                p.Publisher,
+                p.ISBN,
+                p.Language,
+                p.Format,
+                p.PublicationDate,
+                p.Price,
+                p.DiscountPercent,
+                p.DiscountStartDate,
+                p.DiscountEndDate,
+                p.OnSale,
+                p.StockQuantity,
+                p.IsAvailableInStore,
+                FinalPrice = (p.OnSale && p.DiscountPercent.HasValue &&
+                             (!p.DiscountStartDate.HasValue || p.DiscountStartDate <= now) &&
+                             (!p.DiscountEndDate.HasValue || p.DiscountEndDate >= now))
+                            ? Math.Round(p.Price - (p.Price * (decimal)p.DiscountPercent.Value / 100), 2)
+                            : p.Price
+            }).ToList();
+
+            return Ok(results);
         }
 
-        // ✅ ADD PRODUCT
+        // ✅ ADD PRODUCT - updated to return product with FinalPrice
         [HttpPost]
         public async Task<IActionResult> AddProduct([FromForm] ProductDto dto, IFormFile image)
         {
@@ -125,7 +213,35 @@ namespace Try_application.Controllers
                 _context.Products.Add(product);
                 await _context.SaveChangesAsync();
 
-                return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, product);
+                var now = DateTime.UtcNow;
+                var productDto = new
+                {
+                    product.Id,
+                    product.Name,
+                    product.Description,
+                    product.Image,
+                    product.Author,
+                    product.Genre,
+                    product.Publisher,
+                    product.ISBN,
+                    product.Language,
+                    product.Format,
+                    product.PublicationDate,
+                    product.Price,
+                    product.DiscountPercent,
+                    product.DiscountStartDate,
+                    product.DiscountEndDate,
+                    product.OnSale,
+                    product.StockQuantity,
+                    product.IsAvailableInStore,
+                    FinalPrice = (product.OnSale && product.DiscountPercent.HasValue &&
+                                 (!product.DiscountStartDate.HasValue || product.DiscountStartDate <= now) &&
+                                 (!product.DiscountEndDate.HasValue || product.DiscountEndDate >= now))
+                                ? Math.Round(product.Price - (product.Price * (decimal)product.DiscountPercent.Value / 100), 2)
+                                : product.Price
+                };
+
+                return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, productDto);
             }
             catch (Exception ex)
             {
@@ -133,7 +249,7 @@ namespace Try_application.Controllers
             }
         }
 
-        // ✅ UPDATE PRODUCT
+        // ✅ UPDATE PRODUCT - updated to return product with FinalPrice
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProduct(int id, [FromForm] ProductDto dto, IFormFile? image)
         {
@@ -178,7 +294,35 @@ namespace Try_application.Controllers
                 _context.Products.Update(product);
                 await _context.SaveChangesAsync();
 
-                return Ok(product);
+                var now = DateTime.UtcNow;
+                var productDto = new
+                {
+                    product.Id,
+                    product.Name,
+                    product.Description,
+                    product.Image,
+                    product.Author,
+                    product.Genre,
+                    product.Publisher,
+                    product.ISBN,
+                    product.Language,
+                    product.Format,
+                    product.PublicationDate,
+                    product.Price,
+                    product.DiscountPercent,
+                    product.DiscountStartDate,
+                    product.DiscountEndDate,
+                    product.OnSale,
+                    product.StockQuantity,
+                    product.IsAvailableInStore,
+                    FinalPrice = (product.OnSale && product.DiscountPercent.HasValue &&
+                                 (!product.DiscountStartDate.HasValue || product.DiscountStartDate <= now) &&
+                                 (!product.DiscountEndDate.HasValue || product.DiscountEndDate >= now))
+                                ? Math.Round(product.Price - (product.Price * (decimal)product.DiscountPercent.Value / 100), 2)
+                                : product.Price
+                };
+
+                return Ok(productDto);
             }
             catch (Exception ex)
             {
