@@ -5,6 +5,7 @@ using Try_application.Database.Entities;
 using Try_application.Database;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
+using Try_application.Hubs; // Add this for the hub
 
 var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 {
@@ -27,7 +28,8 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowReactApp", policy =>
         policy.WithOrigins("http://localhost:3000")
             .AllowAnyHeader()
-            .AllowAnyMethod());
+            .AllowAnyMethod()
+            .AllowCredentials()); // Add this for SignalR
 });
 
 // 4️⃣ JWT
@@ -57,6 +59,7 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSignalR(); // You already have this
 
 var app = builder.Build();
 
@@ -107,6 +110,9 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+
+// Add this line to map the SignalR hub
+app.MapHub<CustomerNotificationHub>("/customernotificationhub");
 
 // ✅ SEED ADMIN + STAFF
 using (var scope = app.Services.CreateScope())

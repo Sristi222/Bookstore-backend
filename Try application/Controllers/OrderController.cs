@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
-using Try_application.Database;
-using Try_application.Database.Entities;
-using Try_application.Model;
+using Try_application.Database; // Using Database instead of Data
+using Try_application.Database.Entities; // Using Database.Entities instead of Models
+using Try_application.Hubs;
+using Try_application.Model; // Make sure this namespace exists for DTOs
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,11 +19,13 @@ namespace Try_application.Controllers
     [Authorize]
     public class OrdersController : ControllerBase
     {
-        private readonly AppDBContext _context;
+        private readonly AppDBContext _context; // Using AppDBContext instead of ApplicationDbContext
+        private readonly IHubContext<CustomerNotificationHub> _hubContext;
 
-        public OrdersController(AppDBContext context)
+        public OrdersController(AppDBContext context, IHubContext<CustomerNotificationHub> hubContext)
         {
             _context = context;
+            _hubContext = hubContext;
         }
 
         // ✅ POST: Place a new order from cart
@@ -44,7 +48,7 @@ namespace Try_application.Controllers
             var order = new Order
             {
                 UserId = userId,
-                CreatedAt = DateTime.UtcNow,
+                CreatedAt = DateTime.UtcNow, // Using CreatedAt instead of OrderDate
                 Status = "Pending",
                 TotalAmount = cartItems.Sum(c => c.Product.Price * c.Quantity),
                 ClaimCode = claimCode,
@@ -108,7 +112,7 @@ namespace Try_application.Controllers
                 UserId = order.UserId,
                 TotalAmount = order.TotalAmount,
                 Status = order.Status,
-                CreatedAt = order.CreatedAt,
+                CreatedAt = order.CreatedAt, // Using CreatedAt instead of OrderDate
                 ClaimCode = order.ClaimCode,
                 OrderItems = order.OrderItems.Select(oi => new OrderItemDto
                 {
@@ -122,6 +126,7 @@ namespace Try_application.Controllers
             return Ok(dto);
         }
 
+        // Rest of the controller code remains the same...
         // ✅ GET: Orders for user
         [HttpGet]
         public async Task<ActionResult<List<OrderDto>>> GetOrders([FromQuery] string userId)
@@ -141,7 +146,7 @@ namespace Try_application.Controllers
                 UserId = o.UserId,
                 TotalAmount = o.TotalAmount,
                 Status = o.Status,
-                CreatedAt = o.CreatedAt,
+                CreatedAt = o.CreatedAt, // Using CreatedAt instead of OrderDate
                 ClaimCode = o.ClaimCode,
                 OrderItems = o.OrderItems.Select(oi => new OrderItemDto
                 {
@@ -171,7 +176,7 @@ namespace Try_application.Controllers
                 UserId = o.UserId,
                 TotalAmount = o.TotalAmount,
                 Status = o.Status,
-                CreatedAt = o.CreatedAt,
+                CreatedAt = o.CreatedAt, // Using CreatedAt instead of OrderDate
                 ClaimCode = o.ClaimCode,
                 OrderItems = o.OrderItems.Select(oi => new OrderItemDto
                 {
@@ -207,7 +212,7 @@ namespace Try_application.Controllers
             return Ok(new { message = "Order canceled successfully." });
         }
 
-        // ✅ POST: Process Claim Code (staff action)
+        // ✅ POST: Process Claim Code (staff action) - WITH SIGNALR NOTIFICATIONS
         [HttpPost("process-claim")]
         [Authorize(Roles = "Staff")]
         public async Task<IActionResult> ProcessClaim([FromQuery] string claimCode)
@@ -216,6 +221,8 @@ namespace Try_application.Controllers
                 return BadRequest("Claim code is required.");
 
             var order = await _context.Orders
+                .Include(o => o.OrderItems)
+                .ThenInclude(oi => oi.Product)
                 .FirstOrDefaultAsync(o => o.ClaimCode == claimCode);
 
             if (order == null)
@@ -229,6 +236,13 @@ namespace Try_application.Controllers
 
             order.Status = "Completed";
             await _context.SaveChangesAsync();
+
+            // Broadcast notification about the completed order
+            int bookCount = order.OrderItems.Sum(oi => oi.Quantity);
+
+            // Basic notification
+            await _hubContext.Clients.All.SendAsync("ReceiveNotification",
+                $"A customer just bought {bookCount} books!");
 
             return Ok(new { message = $"Order #{order.Id} marked as Completed." });
         }
