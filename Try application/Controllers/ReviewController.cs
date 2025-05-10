@@ -1,15 +1,18 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Try_application.Database;
+using Microsoft.EntityFrameworkCore;
+using Try_application.Database.Entities;
+
 
 [ApiController]
 [Route("api/[controller]")]
 [Authorize]
-public class ReviewsController : ControllerBase
+public class ReviewController : ControllerBase
 {
     private readonly AppDBContext _context;
 
-    public ReviewsController(AppDBContext context)
+    public ReviewController(AppDBContext context)
     {
         _context = context;
     }

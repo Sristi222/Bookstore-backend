@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using Try_application.Database.Entities;
 
+
 namespace Try_application.Database
 {
     public class AppDBContext : IdentityDbContext<User>
