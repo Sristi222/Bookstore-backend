@@ -8,5 +8,7 @@
         public string Status { get; set; }
         public DateTime CreatedAt { get; set; }
         public List<OrderItem> OrderItems { get; set; }
+
+        public string ClaimCode { get; set; }
     }
 }

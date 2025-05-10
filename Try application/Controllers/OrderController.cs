@@ -3,11 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Try_application.Database;
 using Try_application.Database.Entities;
-using Try_application.Model; // for DTOs
+using Try_application.Model;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
+using System.Net.Mail;
 
 namespace Try_application.Controllers
 {
@@ -38,12 +39,15 @@ namespace Try_application.Controllers
             if (!cartItems.Any())
                 return BadRequest("Cart is empty.");
 
+            var claimCode = GenerateClaimCode();
+
             var order = new Order
             {
                 UserId = userId,
                 CreatedAt = DateTime.UtcNow,
                 Status = "Pending",
                 TotalAmount = cartItems.Sum(c => c.Product.Price * c.Quantity),
+                ClaimCode = claimCode,
                 OrderItems = cartItems.Select(c => new OrderItem
                 {
                     ProductId = c.ProductId,
@@ -53,12 +57,51 @@ namespace Try_application.Controllers
             };
 
             _context.Orders.Add(order);
-
-            // Clear the cart after placing order
             _context.CartItems.RemoveRange(cartItems);
             await _context.SaveChangesAsync();
 
-            // map to DTO
+            // ✅ Send email to user
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
+            if (user != null && !string.IsNullOrEmpty(user.Email))
+            {
+                var itemRows = string.Join("", order.OrderItems.Select(item => $@"
+                    <tr>
+                        <td>{item.Product.Name}</td>
+                        <td>{item.Quantity}</td>
+                        <td>Rs. {item.UnitPrice:F2}</td>
+                        <td>Rs. {(item.Quantity * item.UnitPrice):F2}</td>
+                    </tr>
+                "));
+
+                var emailBody = $@"
+                    <html>
+                    <body>
+                        <h2>✅ Thanks for your order #{order.Id}!</h2>
+                        <p>Hello {user.FullName},</p>
+                        <p>Your claim code: <strong>{order.ClaimCode}</strong></p>
+                        <h3>Order Bill:</h3>
+                        <table border='1' cellpadding='5' cellspacing='0'>
+                            <tr>
+                                <th>Book</th>
+                                <th>Qty</th>
+                                <th>Unit Price</th>
+                                <th>Subtotal</th>
+                            </tr>
+                            {itemRows}
+                            <tr>
+                                <td colspan='3' align='right'><strong>Total:</strong></td>
+                                <td><strong>Rs. {order.TotalAmount:F2}</strong></td>
+                            </tr>
+                        </table>
+                        <p>Please present this claim code at the counter to fulfill your order.</p>
+                        <p>Regards,<br>Bookstore Team</p>
+                    </body>
+                    </html>
+                ";
+
+                await SendEmail(user.Email, "Your Claim Code & Bill", emailBody);
+            }
+
             var dto = new OrderDto
             {
                 Id = order.Id,
@@ -66,6 +109,7 @@ namespace Try_application.Controllers
                 TotalAmount = order.TotalAmount,
                 Status = order.Status,
                 CreatedAt = order.CreatedAt,
+                ClaimCode = order.ClaimCode,
                 OrderItems = order.OrderItems.Select(oi => new OrderItemDto
                 {
                     ProductId = oi.ProductId,
@@ -78,7 +122,7 @@ namespace Try_application.Controllers
             return Ok(dto);
         }
 
-        // ✅ GET: List all orders for a user
+        // ✅ GET: Orders for user
         [HttpGet]
         public async Task<ActionResult<List<OrderDto>>> GetOrders([FromQuery] string userId)
         {
@@ -98,6 +142,7 @@ namespace Try_application.Controllers
                 TotalAmount = o.TotalAmount,
                 Status = o.Status,
                 CreatedAt = o.CreatedAt,
+                ClaimCode = o.ClaimCode,
                 OrderItems = o.OrderItems.Select(oi => new OrderItemDto
                 {
                     ProductId = oi.ProductId,
@@ -110,7 +155,37 @@ namespace Try_application.Controllers
             return Ok(orderDtos);
         }
 
-        // ✅ PUT: Cancel an order
+        // ✅ GET: ALL orders (for staff)
+        [HttpGet("all")]
+        [Authorize(Roles = "Staff")]
+        public async Task<ActionResult<List<OrderDto>>> GetAllOrders()
+        {
+            var orders = await _context.Orders
+                .Include(o => o.OrderItems)
+                .ThenInclude(oi => oi.Product)
+                .ToListAsync();
+
+            var orderDtos = orders.Select(o => new OrderDto
+            {
+                Id = o.Id,
+                UserId = o.UserId,
+                TotalAmount = o.TotalAmount,
+                Status = o.Status,
+                CreatedAt = o.CreatedAt,
+                ClaimCode = o.ClaimCode,
+                OrderItems = o.OrderItems.Select(oi => new OrderItemDto
+                {
+                    ProductId = oi.ProductId,
+                    ProductName = oi.Product.Name,
+                    UnitPrice = oi.UnitPrice,
+                    Quantity = oi.Quantity
+                }).ToList()
+            }).ToList();
+
+            return Ok(orderDtos);
+        }
+
+        // ✅ PUT: Cancel order
         [HttpPut("{id}/cancel")]
         public async Task<IActionResult> CancelOrder(int id, [FromQuery] string userId)
         {
@@ -130,6 +205,53 @@ namespace Try_application.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(new { message = "Order canceled successfully." });
+        }
+
+        // ✅ POST: Process Claim Code (staff action)
+        [HttpPost("process-claim")]
+        [Authorize(Roles = "Staff")]
+        public async Task<IActionResult> ProcessClaim([FromQuery] string claimCode)
+        {
+            if (string.IsNullOrWhiteSpace(claimCode))
+                return BadRequest("Claim code is required.");
+
+            var order = await _context.Orders
+                .FirstOrDefaultAsync(o => o.ClaimCode == claimCode);
+
+            if (order == null)
+                return NotFound("Invalid claim code. Order not found.");
+
+            if (order.Status == "Completed")
+                return BadRequest("This order is already completed.");
+
+            if (order.Status == "Cancelled")
+                return BadRequest("This order was cancelled and cannot be fulfilled.");
+
+            order.Status = "Completed";
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = $"Order #{order.Id} marked as Completed." });
+        }
+
+        // ✅ Helper: Generate Claim Code
+        private string GenerateClaimCode()
+        {
+            return Guid.NewGuid().ToString().Substring(0, 8).ToUpper();
+        }
+
+        // ✅ Helper: Send Email
+        private async Task SendEmail(string toEmail, string subject, string htmlBody)
+        {
+            using (var client = new SmtpClient("smtp.gmail.com"))
+            {
+                client.Port = 587;
+                client.Credentials = new System.Net.NetworkCredential("sristishrestha80@gmail.com", "zyiy rlxx oypw wvjn");
+                client.EnableSsl = true;
+
+                var mail = new MailMessage("sristishrestha80@gmail.com", toEmail, subject, htmlBody);
+                mail.IsBodyHtml = true;
+                await client.SendMailAsync(mail);
+            }
         }
     }
 }
