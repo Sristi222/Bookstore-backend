@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using Try_application.Database.Entities;
 
+
 namespace Try_application.Database
 {
     public class AppDBContext : IdentityDbContext<User>
@@ -18,6 +19,9 @@ namespace Try_application.Database
         public DbSet<Bookmark> Bookmarks { get; set; }// ✅ New Bookmark DbSet
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
+
+        public DbSet<Review> Reviews { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
