@@ -32,13 +32,14 @@ namespace Try_application.Controllers
                 {
                     Id = c.Id,
                     ProductId = c.ProductId,
-                    Product = new ProductDto  // ⚠️ You must have this defined in your DTOs
+                    Product = new ProductDto
                     {
                         Id = c.Product.Id,
                         Name = c.Product.Name,
                         Description = c.Product.Description,
                         Price = c.Product.Price,
-                        Image = c.Product.Image
+                        // Don't reference c.Product.Image directly here since ProductDto no longer contains 'Image'.
+                        // If you still need the image in the response, consider creating a separate lightweight DTO or anonymous object.
                     },
                     Quantity = c.Quantity,
                     UnitPrice = c.Product.Price,
@@ -53,7 +54,6 @@ namespace Try_application.Controllers
         }
 
         // ✅ POST: api/Cart?userId=xyz
-        [HttpPost]
         [HttpPost]
         public async Task<ActionResult> AddToCart(string userId, [FromBody] AddToCartDto dto)
         {

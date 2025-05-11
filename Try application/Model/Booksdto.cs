@@ -5,47 +5,37 @@ namespace Try_application.Model
 {
     public class ProductDto
     {
-        // Add the missing Id property
         public int Id { get; set; }
 
+        // Basic Info
         [Required]
         public string Name { get; set; }
 
         public string Description { get; set; }
+        public string Author { get; set; }
+        public string Genre { get; set; }
+        public string Publisher { get; set; }
+        public string ISBN { get; set; }
+        public string Language { get; set; }
+        public string Format { get; set; }
 
+        // Dates
+        public DateTime? PublicationDate { get; set; }
+
+        // Pricing and Sale Info
         [Required]
         public decimal Price { get; set; }
 
-        public string Author { get; set; }
-
-        public string Genre { get; set; }
-
-        public string Publisher { get; set; }
-
-        public string ISBN { get; set; }
-
-        public string Language { get; set; }
-
-        public string Format { get; set; }
-
-        public DateTime? PublicationDate { get; set; }
-
         public decimal? DiscountPercent { get; set; }
-
         public DateTime? DiscountStartDate { get; set; }
-
         public DateTime? DiscountEndDate { get; set; }
-
         public bool OnSale { get; set; }
 
+        // Inventory
         public int StockQuantity { get; set; } = 0;
-
         public bool IsAvailableInStore { get; set; } = true;
 
-        // Add the missing Image property
-        public string Image { get; set; }
-
-        // Category flags
+        // Category Flags
         public bool HasAward { get; set; } = false;
         public bool IsTrending { get; set; } = false;
         public bool IsBestseller { get; set; } = false;

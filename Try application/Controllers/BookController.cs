@@ -332,7 +332,6 @@ namespace Try_application.Controllers
                     TotalSold = 0,
                     Rating = 0,
                     DateAdded = DateTime.UtcNow,
-                    // Category flags
                     HasAward = dto.HasAward,
                     IsTrending = dto.IsTrending,
                     IsBestseller = dto.IsBestseller,
@@ -345,7 +344,7 @@ namespace Try_application.Controllers
                 await _context.SaveChangesAsync();
 
                 var now = DateTime.UtcNow;
-                var productDto = new
+                return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, new
                 {
                     product.Id,
                     product.Name,
@@ -377,9 +376,7 @@ namespace Try_application.Controllers
                                  (!product.DiscountEndDate.HasValue || product.DiscountEndDate >= now))
                                 ? Math.Round(product.Price - (product.Price * (decimal)product.DiscountPercent.Value / 100), 2)
                                 : product.Price
-                };
-
-                return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, productDto);
+                });
             }
             catch (Exception ex)
             {
