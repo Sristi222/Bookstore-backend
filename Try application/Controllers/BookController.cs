@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.IO;
 using System.Linq;
@@ -20,6 +22,96 @@ namespace Try_application.Controllers
         {
             _context = context;
             _env = env;
+        }
+
+        // ✅ GET: /api/Products/trending
+        [HttpGet("trending")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetTrending()
+        {
+            var trendingBooks = await _context.Products
+                .Where(p => p.IsTrending)
+                .OrderByDescending(p => p.TotalSold)
+                .ToListAsync();
+
+            return Ok(trendingBooks);
+        }
+
+        // ✅ GET: /api/Products/bestsellers
+        [HttpGet("bestsellers")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetBestsellers()
+        {
+            var bestsellers = await _context.Products
+                .Where(p => p.IsBestseller)
+                .OrderByDescending(p => p.TotalSold)
+                .ToListAsync();
+
+            return Ok(bestsellers);
+        }
+
+        // ✅ GET: /api/Products/award-winners
+        [HttpGet("award-winners")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetAwardWinners()
+        {
+            var awards = await _context.Products
+                .Where(p => p.HasAward)
+                .ToListAsync();
+
+            return Ok(awards);
+        }
+
+        // ✅ GET: /api/Products/new-releases
+        [HttpGet("new-releases")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetNewReleases()
+        {
+            var newReleases = await _context.Products
+                .Where(p => p.IsNewRelease)
+                .OrderByDescending(p => p.PublicationDate)
+                .ToListAsync();
+
+            return Ok(newReleases);
+        }
+
+        // ✅ GET: /api/Products/new-arrivals
+        [HttpGet("new-arrivals")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetNewArrivals()
+        {
+            var oneMonthAgo = DateTime.UtcNow.AddMonths(-1);
+            var arrivals = await _context.Products
+                .Where(p => p.DateAdded >= oneMonthAgo)
+                .OrderByDescending(p => p.DateAdded)
+                .ToListAsync();
+
+            return Ok(arrivals);
+        }
+
+        // ✅ GET: /api/Products/coming-soon
+        [HttpGet("coming-soon")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetComingSoon()
+        {
+            var comingSoon = await _context.Products
+                .Where(p => p.IsComingSoon)
+                .OrderBy(p => p.PublicationDate)
+                .ToListAsync();
+
+            return Ok(comingSoon);
+        }
+
+        // ✅ GET: /api/Products/deals
+        [HttpGet("deals")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetDeals()
+        {
+            var deals = await _context.Products
+                .Where(p => p.IsOnDeal || (p.OnSale && p.DiscountPercent > 0))
+                .ToListAsync();
+
+            return Ok(deals);
         }
 
         // ✅ GET ALL products
@@ -52,6 +144,13 @@ namespace Try_application.Controllers
                     p.OnSale,
                     p.StockQuantity,
                     p.IsAvailableInStore,
+                    p.HasAward,
+                    p.IsTrending,
+                    p.IsBestseller,
+                    p.IsNewRelease,
+                    p.IsComingSoon,
+                    p.IsOnDeal,
+                    p.DateAdded,
                     FinalPrice = (p.OnSale && p.DiscountPercent.HasValue &&
                                  (!p.DiscountStartDate.HasValue || p.DiscountStartDate <= now) &&
                                  (!p.DiscountEndDate.HasValue || p.DiscountEndDate >= now))
@@ -91,6 +190,13 @@ namespace Try_application.Controllers
                     p.OnSale,
                     p.StockQuantity,
                     p.IsAvailableInStore,
+                    p.HasAward,
+                    p.IsTrending,
+                    p.IsBestseller,
+                    p.IsNewRelease,
+                    p.IsComingSoon,
+                    p.IsOnDeal,
+                    p.DateAdded,
                     FinalPrice = (p.OnSale && p.DiscountPercent.HasValue &&
                                  (!p.DiscountStartDate.HasValue || p.DiscountStartDate <= now) &&
                                  (!p.DiscountEndDate.HasValue || p.DiscountEndDate >= now))
@@ -106,7 +212,8 @@ namespace Try_application.Controllers
 
         // ✅ SEARCH products
         [HttpGet("search")]
-        public IActionResult SearchProducts(string? q, string? sort = "name", int? minPrice = null, int? maxPrice = null)
+        public IActionResult SearchProducts(string? q, string? sort = "name", int? minPrice = null, int? maxPrice = null,
+            bool? trending = null, bool? bestseller = null, bool? awardWinner = null, bool? newRelease = null, bool? comingSoon = null, bool? onDeal = null)
         {
             var now = DateTime.UtcNow;
             var query = _context.Products.AsQueryable();
@@ -125,12 +232,21 @@ namespace Try_application.Controllers
             if (minPrice.HasValue) query = query.Where(p => p.Price >= minPrice.Value);
             if (maxPrice.HasValue) query = query.Where(p => p.Price <= maxPrice.Value);
 
+            // Category filters
+            if (trending.HasValue && trending.Value) query = query.Where(p => p.IsTrending);
+            if (bestseller.HasValue && bestseller.Value) query = query.Where(p => p.IsBestseller);
+            if (awardWinner.HasValue && awardWinner.Value) query = query.Where(p => p.HasAward);
+            if (newRelease.HasValue && newRelease.Value) query = query.Where(p => p.IsNewRelease);
+            if (comingSoon.HasValue && comingSoon.Value) query = query.Where(p => p.IsComingSoon);
+            if (onDeal.HasValue && onDeal.Value) query = query.Where(p => p.IsOnDeal || (p.OnSale && p.DiscountPercent > 0));
+
             query = sort switch
             {
                 "price_asc" => query.OrderBy(p => p.Price),
                 "price_desc" => query.OrderByDescending(p => p.Price),
                 "name" => query.OrderBy(p => p.Name),
                 "popularity" => query.OrderByDescending(p => p.TotalSold),
+                "newest" => query.OrderByDescending(p => p.DateAdded),
                 _ => query
             };
 
@@ -154,6 +270,13 @@ namespace Try_application.Controllers
                 p.OnSale,
                 p.StockQuantity,
                 p.IsAvailableInStore,
+                p.HasAward,
+                p.IsTrending,
+                p.IsBestseller,
+                p.IsNewRelease,
+                p.IsComingSoon,
+                p.IsOnDeal,
+                p.DateAdded,
                 FinalPrice = (p.OnSale && p.DiscountPercent.HasValue &&
                              (!p.DiscountStartDate.HasValue || p.DiscountStartDate <= now) &&
                              (!p.DiscountEndDate.HasValue || p.DiscountEndDate >= now))
@@ -207,7 +330,15 @@ namespace Try_application.Controllers
                     IsAvailableInStore = dto.IsAvailableInStore,
                     Image = $"/uploads/{fileName}",
                     TotalSold = 0,
-                    Rating = 0
+                    Rating = 0,
+                    DateAdded = DateTime.UtcNow,
+                    // Category flags
+                    HasAward = dto.HasAward,
+                    IsTrending = dto.IsTrending,
+                    IsBestseller = dto.IsBestseller,
+                    IsNewRelease = dto.IsNewRelease,
+                    IsComingSoon = dto.IsComingSoon,
+                    IsOnDeal = dto.IsOnDeal
                 };
 
                 _context.Products.Add(product);
@@ -234,6 +365,13 @@ namespace Try_application.Controllers
                     product.OnSale,
                     product.StockQuantity,
                     product.IsAvailableInStore,
+                    product.HasAward,
+                    product.IsTrending,
+                    product.IsBestseller,
+                    product.IsNewRelease,
+                    product.IsComingSoon,
+                    product.IsOnDeal,
+                    product.DateAdded,
                     FinalPrice = (product.OnSale && product.DiscountPercent.HasValue &&
                                  (!product.DiscountStartDate.HasValue || product.DiscountStartDate <= now) &&
                                  (!product.DiscountEndDate.HasValue || product.DiscountEndDate >= now))
@@ -291,6 +429,14 @@ namespace Try_application.Controllers
                 product.StockQuantity = dto.StockQuantity;
                 product.IsAvailableInStore = dto.IsAvailableInStore;
 
+                // Category flags
+                product.HasAward = dto.HasAward;
+                product.IsTrending = dto.IsTrending;
+                product.IsBestseller = dto.IsBestseller;
+                product.IsNewRelease = dto.IsNewRelease;
+                product.IsComingSoon = dto.IsComingSoon;
+                product.IsOnDeal = dto.IsOnDeal;
+
                 _context.Products.Update(product);
                 await _context.SaveChangesAsync();
 
@@ -315,6 +461,13 @@ namespace Try_application.Controllers
                     product.OnSale,
                     product.StockQuantity,
                     product.IsAvailableInStore,
+                    product.HasAward,
+                    product.IsTrending,
+                    product.IsBestseller,
+                    product.IsNewRelease,
+                    product.IsComingSoon,
+                    product.IsOnDeal,
+                    product.DateAdded,
                     FinalPrice = (product.OnSale && product.DiscountPercent.HasValue &&
                                  (!product.DiscountStartDate.HasValue || product.DiscountStartDate <= now) &&
                                  (!product.DiscountEndDate.HasValue || product.DiscountEndDate >= now))
