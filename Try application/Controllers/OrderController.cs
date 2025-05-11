@@ -45,12 +45,15 @@ namespace Try_application.Controllers
 
             var claimCode = GenerateClaimCode();
 
+            // 🏆 calculate total with discounts
+            var totalAmount = await CalculateDiscountedTotal(userId, cartItems);
+
             var order = new Order
             {
                 UserId = userId,
                 CreatedAt = DateTime.UtcNow, // Using CreatedAt instead of OrderDate
                 Status = "Pending",
-                TotalAmount = cartItems.Sum(c => c.Product.Price * c.Quantity),
+                TotalAmount = totalAmount,
                 ClaimCode = claimCode,
                 OrderItems = cartItems.Select(c => new OrderItem
                 {
@@ -93,7 +96,7 @@ namespace Try_application.Controllers
                             </tr>
                             {itemRows}
                             <tr>
-                                <td colspan='3' align='right'><strong>Total:</strong></td>
+                                <td colspan='3' align='right'><strong>Total (after discount):</strong></td>
                                 <td><strong>Rs. {order.TotalAmount:F2}</strong></td>
                             </tr>
                         </table>
@@ -245,6 +248,30 @@ namespace Try_application.Controllers
                 $"A customer just bought {bookCount} books!");
 
             return Ok(new { message = $"Order #{order.Id} marked as Completed." });
+        }
+
+        // ✅ HELPER: Calculate discounts
+        private async Task<decimal> CalculateDiscountedTotal(string userId, List<CartItem> cartItems)
+        {
+            decimal baseTotal = cartItems.Sum(c => c.Product.Price * c.Quantity);
+            int totalQuantity = cartItems.Sum(c => c.Quantity);
+
+            int completedOrdersCount = await _context.Orders
+                .CountAsync(o => o.UserId == userId && o.Status == "Completed");
+
+            decimal finalTotal = baseTotal;
+
+            if (totalQuantity >= 5)
+            {
+                finalTotal *= 0.95m; // 5% discount
+            }
+
+            if (completedOrdersCount >= 10)
+            {
+                finalTotal *= 0.90m; // additional 10% discount
+            }
+
+            return Math.Round(finalTotal, 2);
         }
 
         // ✅ Helper: Generate Claim Code
