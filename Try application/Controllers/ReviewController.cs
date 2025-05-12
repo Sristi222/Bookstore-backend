@@ -93,7 +93,9 @@ namespace Try_application.Controllers
                     r.UserId,
                     r.Rating,
                     r.Comment,
-                    r.CreatedAt
+                    r.CreatedAt,
+                    ProductName = r.Product.Name,
+                    ProductImage = r.Product.Image
                 })
                 .ToListAsync();
 

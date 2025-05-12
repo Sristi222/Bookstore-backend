@@ -17,7 +17,7 @@ namespace Try_application.Controllers
             _context = context;
         }
 
-        // ✅ GET: api/Cart?userId=xyz
+        //GET: api/Cart?userId=xyz
         [HttpGet]
         public async Task<ActionResult<CartDto>> GetCart(string userId)
         {
@@ -38,8 +38,7 @@ namespace Try_application.Controllers
                         Name = c.Product.Name,
                         Description = c.Product.Description,
                         Price = c.Product.Price,
-                        // Don't reference c.Product.Image directly here since ProductDto no longer contains 'Image'.
-                        // If you still need the image in the response, consider creating a separate lightweight DTO or anonymous object.
+                        Image = c.Product.Image  // Now included
                     },
                     Quantity = c.Quantity,
                     UnitPrice = c.Product.Price,
@@ -53,7 +52,7 @@ namespace Try_application.Controllers
             return Ok(cartDto);
         }
 
-        // ✅ POST: api/Cart?userId=xyz
+        //POST: api/Cart?userId=xyz
         [HttpPost]
         public async Task<ActionResult> AddToCart(string userId, [FromBody] AddToCartDto dto)
         {
@@ -86,7 +85,7 @@ namespace Try_application.Controllers
             return Ok();
         }
 
-        // ✅ PUT: api/Cart/{id}?userId=xyz
+        //PUT: api/Cart/{id}?userId=xyz
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateQuantity(int id, string userId, [FromBody] UpdateCartDto dto)
         {
