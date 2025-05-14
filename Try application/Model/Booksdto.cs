@@ -17,6 +17,8 @@ namespace Try_application.Model
         public string Publisher { get; set; }
         public string ISBN { get; set; }
         public string Language { get; set; }
+
+        public string? Image { get; set; }
         public string Format { get; set; }
 
         // Dates

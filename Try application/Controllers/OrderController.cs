@@ -165,7 +165,7 @@ namespace Try_application.Controllers
 
         // ✅ GET: ALL orders (for staff)
         [HttpGet("all")]
-        [Authorize(Roles = "Staff")]
+        [Authorize(Roles = "Admin, Staff")]
         public async Task<ActionResult<List<OrderDto>>> GetAllOrders()
         {
             var orders = await _context.Orders
@@ -217,7 +217,7 @@ namespace Try_application.Controllers
 
         // ✅ POST: Process Claim Code (staff action) - WITH SIGNALR NOTIFICATIONS
         [HttpPost("process-claim")]
-        [Authorize(Roles = "Staff")]
+        [Authorize(Roles = "Admin, Staff")]
         public async Task<IActionResult> ProcessClaim([FromQuery] string claimCode)
         {
             if (string.IsNullOrWhiteSpace(claimCode))
