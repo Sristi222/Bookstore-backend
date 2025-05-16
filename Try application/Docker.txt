@@ -1,0 +1,15 @@
+# Build stage
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+WORKDIR /app
+
+COPY *.sln ./
+COPY "Try application/" "./Try application/"
+RUN dotnet restore "./Try application/Try_application.csproj"
+RUN dotnet publish "./Try application/Try_application.csproj" -c Release -o /out
+
+# Runtime stage
+FROM mcr.microsoft.com/dotnet/aspnet:7.0
+WORKDIR /app
+COPY --from=build /out .
+
+ENTRYPOINT ["dotnet", "Try_application.dll"]
