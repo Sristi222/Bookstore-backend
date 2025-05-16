@@ -2,10 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
-using Try_application.Database; // Using Database instead of Data
-using Try_application.Database.Entities; // Using Database.Entities instead of Models
+using Try_application.Database;
+using Try_application.Database.Entities;
 using Try_application.Hubs;
-using Try_application.Model; // Make sure this namespace exists for DTOs
+using Try_application.Model;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,7 +19,7 @@ namespace Try_application.Controllers
     [Authorize]
     public class OrdersController : ControllerBase
     {
-        private readonly AppDBContext _context; // Using AppDBContext instead of ApplicationDbContext
+        private readonly AppDBContext _context;
         private readonly IHubContext<CustomerNotificationHub> _hubContext;
 
         public OrdersController(AppDBContext context, IHubContext<CustomerNotificationHub> hubContext)
@@ -46,14 +46,14 @@ namespace Try_application.Controllers
             var claimCode = GenerateClaimCode();
 
             // 🏆 calculate total with discounts
-            var totalAmount = await CalculateDiscountedTotal(userId, cartItems);
+            var (finalTotal, discountAmount) = await CalculateDiscountedTotal(userId, cartItems);
 
             var order = new Order
             {
                 UserId = userId,
-                CreatedAt = DateTime.UtcNow, // Using CreatedAt instead of OrderDate
+                CreatedAt = DateTime.UtcNow,
                 Status = "Pending",
-                TotalAmount = totalAmount,
+                TotalAmount = finalTotal,
                 ClaimCode = claimCode,
                 OrderItems = cartItems.Select(c => new OrderItem
                 {
@@ -96,6 +96,14 @@ namespace Try_application.Controllers
                             </tr>
                             {itemRows}
                             <tr>
+                                <td colspan='3' align='right'><strong>Subtotal:</strong></td>
+                                <td>Rs. {order.TotalAmount + discountAmount:F2}</td>
+                            </tr>
+                            <tr>
+                                <td colspan='3' align='right'><strong>Discount:</strong></td>
+                                <td style='color: green;'>- Rs. {discountAmount:F2}</td>
+                            </tr>
+                            <tr>
                                 <td colspan='3' align='right'><strong>Total (after discount):</strong></td>
                                 <td><strong>Rs. {order.TotalAmount:F2}</strong></td>
                             </tr>
@@ -113,9 +121,10 @@ namespace Try_application.Controllers
             {
                 Id = order.Id,
                 UserId = order.UserId,
-                TotalAmount = order.TotalAmount,
+                TotalAmount = finalTotal,
+                DiscountAmount = discountAmount,
                 Status = order.Status,
-                CreatedAt = order.CreatedAt, // Using CreatedAt instead of OrderDate
+                CreatedAt = order.CreatedAt,
                 ClaimCode = order.ClaimCode,
                 OrderItems = order.OrderItems.Select(oi => new OrderItemDto
                 {
@@ -129,7 +138,6 @@ namespace Try_application.Controllers
             return Ok(dto);
         }
 
-        // Rest of the controller code remains the same...
         // ✅ GET: Orders for user
         [HttpGet]
         public async Task<ActionResult<List<OrderDto>>> GetOrders([FromQuery] string userId)
@@ -149,7 +157,7 @@ namespace Try_application.Controllers
                 UserId = o.UserId,
                 TotalAmount = o.TotalAmount,
                 Status = o.Status,
-                CreatedAt = o.CreatedAt, // Using CreatedAt instead of OrderDate
+                CreatedAt = o.CreatedAt,
                 ClaimCode = o.ClaimCode,
                 OrderItems = o.OrderItems.Select(oi => new OrderItemDto
                 {
@@ -179,7 +187,7 @@ namespace Try_application.Controllers
                 UserId = o.UserId,
                 TotalAmount = o.TotalAmount,
                 Status = o.Status,
-                CreatedAt = o.CreatedAt, // Using CreatedAt instead of OrderDate
+                CreatedAt = o.CreatedAt,
                 ClaimCode = o.ClaimCode,
                 OrderItems = o.OrderItems.Select(oi => new OrderItemDto
                 {
@@ -251,27 +259,31 @@ namespace Try_application.Controllers
         }
 
         // ✅ HELPER: Calculate discounts
-        private async Task<decimal> CalculateDiscountedTotal(string userId, List<CartItem> cartItems)
+        private async Task<(decimal finalTotal, decimal discountAmount)> CalculateDiscountedTotal(string userId, List<CartItem> cartItems)
         {
             decimal baseTotal = cartItems.Sum(c => c.Product.Price * c.Quantity);
             int totalQuantity = cartItems.Sum(c => c.Quantity);
 
+            // Count the number of completed orders
             int completedOrdersCount = await _context.Orders
                 .CountAsync(o => o.UserId == userId && o.Status == "Completed");
 
-            decimal finalTotal = baseTotal;
+            // Initialize discount
+            decimal discount = 0;
 
+            // Apply 5% discount if 5+ items are in the cart
             if (totalQuantity >= 5)
-            {
-                finalTotal *= 0.95m; // 5% discount
-            }
+                discount += 0.05m;
 
+            // Apply 10% discount if 10 or more successful orders have been completed
             if (completedOrdersCount >= 10)
-            {
-                finalTotal *= 0.90m; // additional 10% discount
-            }
+                discount += 0.10m;
 
-            return Math.Round(finalTotal, 2);
+            // Calculate discount amount
+            decimal discountAmount = baseTotal * discount;
+            decimal finalTotal = baseTotal - discountAmount;
+
+            return (Math.Round(finalTotal, 2), Math.Round(discountAmount, 2));
         }
 
         // ✅ Helper: Generate Claim Code
